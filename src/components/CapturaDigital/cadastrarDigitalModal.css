@@ -1,0 +1,66 @@
+/* src/components/CapturaDigital/cadastrarDigitalModal.css */
+
+/* Estilos para o modal */
+.react-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute; /* Garante que o modal seja posicionado absolutamente */
+    top: 50%; /* Posiciona o modal no meio verticalmente */
+    left: 50%; /* Posiciona o modal no meio horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza o modal na tela */
+    background-color: white; /* Cor de fundo do modal */
+    border: none; /* Remove a borda do modal */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    max-width: 80%; /* Define a largura máxima do modal */
+    max-height: 80%; /* Define a altura máxima do modal */
+    overflow-y: auto; /* Adiciona scroll vertical quando necessário */
+  }
+
+  .react-modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo semitransparente */
+    position: fixed; /* Garante que a sobreposição ocupe toda a tela */
+    top: 0; /* Posiciona a sobreposição no topo */
+    left: 0; /* Posiciona a sobreposição à esquerda */
+    right: 0; /* Posiciona a sobreposição à direita */
+    bottom: 0; /* Posiciona a sobreposição na parte inferior */
+    display: flex; /* Exibe a sobreposição como um flex container */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+  
+  /* Estilos para a janela de imagem da digital */
+  .digital-window {
+    width: 200px; /* Ajuste a largura conforme necessário */
+    height: 200px; /* Ajuste a altura conforme necessário */
+    background-color: #f0f0f0; /* Cor de fundo da janela */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px; /* Espaçamento interno */
+    margin-bottom: 20px; /* Espaçamento abaixo da janela */
+  }
+  
+  /* Estilos para o botão */
+  .digital-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007f00;
+    color: white;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    
+  }
+  
+  .digital-button:hover {
+    background-color: #005900;
+  }
+
+  .button-digital{
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+  

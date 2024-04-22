@@ -1,0 +1,105 @@
+/* src/components/FormularioPaciente/FormularioPaciente.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: black;
+}
+
+.container {
+    background-image: url('../../assets/Principal.png'); /* Adicione o caminho para a imagem de fundo */
+    background-size: 110%;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinhar a logo no topo e na parte esquerda */
+    justify-content: flex-start; /* Alinhar a logo no topo e na parte esquerda */
+    padding: 5px; /* Adicionar padding para afastar a logo da borda da tela */
+}
+
+.logo {
+    display: block;
+    margin-bottom: 5px; /* Adicionar espaço abaixo da logo */
+    max-width: 200px;
+    
+}
+
+.formulario {
+    width: 100%; /* Ocupar toda a largura disponível */
+    display: flex;
+    flex-wrap: wrap; /* Permitir que os elementos do formulário quebrem para a próxima linha quando necessário */
+    justify-content: space-between; /* Distribuir os elementos do formulário uniformemente ao longo da linha */
+}
+.titulo {
+    width: 100%; /* Ocupar toda a largura disponível */
+    text-align: center; /* Centralizar o texto */
+    margin-bottom: 20px; /* Adicionar espaço abaixo do título */
+}
+
+.campo {
+    width: 48%; /* Definir a largura dos campos para ocupar metade da largura do formulário */
+    margin-bottom: 12px;
+    display: flex; /* Exibir os elementos como um flex container */
+    align-items: center; /* Espaçamento entre os campos */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    flex: 5;
+}
+
+input {
+    width: calc(90% - 95px); /* Ocupar 100% da largura disponível menos o espaço das caixinhas dos checkboxes */
+    padding: 8px; /* Reduzir o espaçamento interno */
+    border: 3px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif; /* Aplicar a fonte Inter para os inputs */
+    font-weight: bold; /* Deixar a fonte em negrito apenas para os inputs */
+}
+
+select {
+    width: 100%; /* Ocupar toda a largura disponível */
+    padding: 8px; /* Reduzir o espaçamento interno */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif; /* Aplicar a fonte Inter para os selects */
+    max-width: 250px;
+    margin-right: 245px;
+     /* Defina o tamanho máximo desejado */
+}
+
+.button-container {
+    width: 100%; /* Ocupar toda a largura disponível */
+    display: flex; /* Exibir os botões em linha */
+    justify-content: space-between; /* Distribuir os botões uniformemente ao longo da linha */
+    margin-top: 20px; /* Adicionar espaçamento acima dos botões */
+}
+
+button {
+    padding: 10px 20px; /* Ajustar o padding vertical e horizontal */
+    border: none;
+    border-radius: 12px;
+    background-color: #007f00;
+    color: white;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    margin-left: 280px;
+    margin-right: 200px;
+}
+
+button:hover {
+    background-color: #005900;
+}
+
+.checkbox-container {
+    flex: 5; /* Ocupar todo o espaço disponível */
+    display: flex; /* Exibir os elementos como um flex container */
+    align-items: normal;
+    margin-right: 300px; /* Alinhar os elementos verticalmente ao centro */
+}
+
+.checkbox-label {
+    margin-left: 0px; /* Adicionar espaço entre a caixinha do checkbox e o texto "SIM" */
+}
