@@ -78,7 +78,7 @@ select {
 }
 
 button {
-    padding: 10px 20px; /* Ajustar o padding vertical e horizontal */
+    padding: 10px 40px; /* Ajustar o padding vertical e horizontal */
     border: none;
     border-radius: 12px;
     background-color: #007f00;

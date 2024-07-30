@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './formularioPaciente.css';
 import logoClinica from '../../assets/Logo2024.png';
 import CadastrarDigitalModal from '../CapturaDigital/cadastrarDigitalModal';
@@ -12,6 +13,26 @@ const FormularioPaciente = () => {
   const [isBiometriaModalOpen, setIsBiometriaModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
   const [pacienteCadastrado, setPacienteCadastrado] = useState(false);
+ 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const [formData, setFormData] = useState({
+    cpf: '',
+    nomeCompleto: '',
+    telefone: '',
+    email:'',
+    cep:'',
+    idade:'',
+    estado:'',
+    quantidadeFilhos:'',
+  })
+
+  useEffect(() => {
+    if (location.state && location.state.paciente) {
+      setFormData(location.state.paciente);
+    }
+  }, [location.state]);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -44,6 +65,15 @@ const FormularioPaciente = () => {
   const handleClienteMaryCardChange = (e) => {
     setIsClienteMaryCard(e.target.checked);
   }
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleEditClick = () => {
+    navigate('/editar-pacientes');
+    };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -193,21 +223,20 @@ const FormularioPaciente = () => {
           <label htmlFor="depen5">Dependente 5:</label>
           <input type="text" id="depen5" name="dependente5" disabled={!isClienteMaryCard}/>
         </div>
-        <div className="button-container">
-          <button type="submit">Cadastrar Paciente</button>
-          <button type="button" onClick={openModal}>Cadastrar Digital</button>
+        <div className="campo">
+          <button type="submit" className="btn">Cadastrar</button>
+          <button type="button" className='edit-button' onClick={handleEditClick}>Editar</button>
+          <button type="button" onClick={openModal}>Biometria</button>
         </div>
+        
       </form>
-
-      <CadastrarDigitalModal isOpen={isBiometriaModalOpen} onRequestClose={closeModalBiometria} onDigitalCadastrada={onDigitalCadastrada} />
-      <CapturaFacialModal isOpen={isReconhecimentoFacialAberto} onRequestClose={() => setIsReconhecimentoFacialAberto(false)} />
-
-      <ModalComponent
-        title="Cadastro de Paciente"
-        message="Paciente cadastrado com sucesso!"
-        isOpen={isModalOpen}
-        onClose={closeModal}
-      />
+      <ModalComponent isOpen={isModalOpen} onClose={closeModal} title="Mensagem" message={modalMessage} />
+      {pacienteCadastrado && (
+        <CadastrarDigitalModal isOpen={isBiometriaModalOpen} onClose={closeModalBiometria} onDigitalCadastrada={onDigitalCadastrada} />
+      )}
+      {pacienteCadastrado && isReconhecimentoFacialAberto && (
+        <CapturaFacialModal isOpen={isReconhecimentoFacialAberto} onClose={closeModalFacial} />
+      )}
     </div>
   );
 };

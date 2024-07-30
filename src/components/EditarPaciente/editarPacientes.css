@@ -1,0 +1,56 @@
+
+.editar-pacientes-container {
+    background-image: url('../../assets/Principal.png'); /* Adicione o caminho para a imagem de fundo */
+    background-size: 110%;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinhar a logo no topo e na parte esquerda */
+    justify-content: flex-start; /* Alinhar a logo no topo e na parte esquerda */
+    padding: 5px; /* Adicionar padding para afastar a logo da borda da tela */
+  }
+  
+  .titulo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    display: block;
+    width: 25%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .pacientes-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .pacientes-table th,
+  .pacientes-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .pacientes-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .edit-button {
+    background-color: #007f00; /* Ajuste a cor do botão conforme necessário */
+    color: white;
+    border: none;
+    padding: 10px 55px; /* Ajusta o tamanho do botão */
+    cursor: pointer;
+    margin: 10px; /* Espaço ao redor do botão */
+    text-align: center; /* Centraliza o texto dentro do botão */
+  }
+  .edit-button:hover {
+    background-color: #45a049; /* Cor do botão ao passar o mouse */
+  }
+  
